@@ -6,8 +6,10 @@ class LoginPage extends StatelessWidget {
   _customButton(
     String asset,
     String text,
+    String key,
   ) {
     return Container(
+      key: ValueKey(key),
       height: 55,
       width: double.maxFinite,
       decoration: BoxDecoration(
@@ -61,6 +63,9 @@ class LoginPage extends StatelessWidget {
               height: 50,
             ),
             Image.asset(
+              key: const ValueKey(
+                "imageMedium",
+              ),
               'assets/images/medium.png',
               height: 50,
               width: 275,
@@ -70,6 +75,9 @@ class LoginPage extends StatelessWidget {
               height: 100,
             ),
             const Text(
+              key: ValueKey(
+                "textTitle",
+              ),
               'Join Medium.',
               style: TextStyle(
                 fontSize: 48,
@@ -81,6 +89,7 @@ class LoginPage extends StatelessWidget {
             _customButton(
               'assets/images/google.png',
               'Sign up with Google',
+              'signupGoogle',
             ),
             Container(
               height: 15,
@@ -88,6 +97,7 @@ class LoginPage extends StatelessWidget {
             _customButton(
               'assets/images/email.png',
               'Sign up with Email',
+              'signupEmail',
             ),
             Container(
               height: 30,
@@ -100,6 +110,9 @@ class LoginPage extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Container(
+                      key: const ValueKey(
+                        'dividerLeft',
+                      ),
                       height: 1,
                       color: Colors.black,
                     ),
@@ -118,6 +131,9 @@ class LoginPage extends StatelessWidget {
                   ),
                   Expanded(
                     child: Container(
+                      key: const ValueKey(
+                        'dividerRight',
+                      ),
                       height: 1,
                       color: Colors.black,
                     ),
@@ -140,6 +156,7 @@ class LoginPage extends StatelessWidget {
                   16,
                 ),
                 child: Image.asset(
+                  key: const ValueKey("buttonFacebook"),
                   'assets/images/facebook.png',
                 ),
               ),
